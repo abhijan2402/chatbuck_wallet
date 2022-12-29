@@ -1,0 +1,76 @@
+.AccountCreateDiv {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+}
+
+.New-to-MM {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: 5%;
+}
+
+.Set-div {
+    width: auto;
+    margin: auto;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4% 0%;
+    /* padding: 10% 2%; */
+}
+
+.FirstImg {
+    width: 8%;
+    height: 20%;
+}
+
+.FirstImg1 {
+    width: 8%;
+    height: 20%;
+}
+
+.startedBtndiv {
+    padding: 13px 3%;
+    border-radius: 20px;
+    background-color: #4658E6;
+    color: white;
+    font-size: 20px;
+    border: none;
+    width: 50%;
+}
+
+.BtnDivImport {
+    margin: 5% 0%;
+}
+
+.FirstSelectDiv {
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 20px;
+    padding: 2% 10px;
+    margin: 1% 3%;
+    width: 30%;
+}
+
+@media screen and (min-width: 300px) and (max-width:800px) {
+    .Set-div {
+        width: auto;
+        margin: auto;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-direction: column;
+        /* flex-direction: row; */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        /* margin: 4% 0%; */
+        /* padding: 10% 2%; */
+    }
+
+    .FirstSelectDiv {
+        margin: 8% 3%;
+        width: 80%;
+    }
+}

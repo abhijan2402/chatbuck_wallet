@@ -1,0 +1,71 @@
+.MSoptiondiv {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.MSinnerdiv {
+    /* border: 1px solid green; */
+    width: 5%;
+    flex-wrap: wrap;
+}
+
+.MSImgSize {
+    width: 40px;
+    height: 40px;
+}
+
+.MSPara {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.MSActivity {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.MSActivityInnerDiv {
+    /* border: 1px solid rgb(78, 5, 62); */
+    width: 50%;
+    font-size: 30px;
+    /* font-weight: bolder; */
+    padding: 15px;
+}
+
+@media screen and (min-width: 600px) and (max-width:900px) {
+    .MSinnerdiv {
+        /* border: 1px solid green; */
+        width: 30%;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width:600px) {
+    .MSoptiondiv {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    .MSinnerdiv {
+        /* border: 1px solid green; */
+        width: 5%;
+        flex-wrap: wrap;
+        width: 30%;
+    }
+
+    .MSImgSize {
+        width: 40px;
+        height: 40px;
+    }
+}

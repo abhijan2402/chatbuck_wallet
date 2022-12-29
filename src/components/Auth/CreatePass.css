@@ -1,0 +1,55 @@
+.PassDiv {
+    /* border: 1px solid green; */
+    margin: auto;
+    width: auto;
+    font-size: 38px;
+    font-weight: "200";
+    margin-top: 10%;
+    width: 30%;
+    text-align: left;
+}
+
+.FormDiv {
+    display: block;
+    margin: auto;
+    width: auto;
+    width: 30%;
+}
+
+.InnerDivForm {
+    margin: 7% 0%;
+    /* width: 100%; */
+}
+
+.PassBtntext {
+    padding: 10px 3%;
+    border-radius: 20px;
+    background-color: #4658E6;
+    color: white;
+    font-size: 20px;
+    border: none;
+    width: 40%;
+}
+
+.PassBtn {
+    /* border: 1px solid green; */
+    margin: auto;
+    width: auto;
+    width: 100%;
+    text-align: left;
+}
+
+@media screen and (min-width: 300px) and (max-width:800px) {
+
+    .FormDiv {
+        width: 80%;
+    }
+
+    .PassDiv {
+        width: 80%;
+    }
+
+    .PassBtntext {
+        width: 100%;
+    }
+}

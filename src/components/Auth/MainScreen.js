@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
+import Popover from '@mui/material/Popover';
 
 function MainScreen() {
     const style = {
@@ -25,6 +26,17 @@ function MainScreen() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose1 = () => {
+        setAnchorEl(null);
+    };
+    const open1 = Boolean(anchorEl);
+    const id = open1 ? 'simple-popover' : undefined;
 
     const Main = () => {
         console.log("hello1")
@@ -41,7 +53,11 @@ function MainScreen() {
 
             <div>
                 <div style={{ borderBottom: "3px solid lightgrey" }}>
-                    <h2>Main Account</h2>
+                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                        <h2>Main Account</h2>
+                        <img src='https://cdn-icons-png.flaticon.com/128/9182/9182845.png' className='MSImgSize1' onClick={handleClick} />
+
+                    </div>
                     <h3>4564546564646</h3>
                 </div>
                 <div>
@@ -90,6 +106,20 @@ function MainScreen() {
                     </Typography>
                 </Box>
             </Modal>
+            <Popover
+                id={id}
+                open={open1}
+                anchorEl={anchorEl}
+                onClose={handleClose1}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+            >
+                <Typography sx={{ p: 2 }}>Private Key :466546546546</Typography>
+                <Typography sx={{ p: 2 }}>Public key : 54556556566</Typography>
+                <Typography sx={{ p: 2 }}>BlockChain key : 54556556566</Typography>
+            </Popover>
         </>
     )
 }

@@ -1,72 +1,84 @@
-import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react'
-import FormControl, { useFormControl } from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-// import Box from '@mui/material/Box';
-import FormHelperText from '@mui/material/FormHelperText';
-// import PageviewRoundedIcon from '@mui/icons-material/PageviewRounded';
 import axios from 'axios';
 import './HomeScreen.css';
-function MyFormHelperText() {
-    const { focused } = useFormControl() || {};
-
-    const helperText = React.useMemo(() => {
-        if (focused) {
-            return 'This field is being focused';
-        }
-
-        return 'Helper text';
-    }, [focused]);
-
-    return <FormHelperText>{helperText}</FormHelperText>;
-}
 
 function HomeScreen() {
 
-    const [user, setUser] = useState([]);
-
-    const fetchData1 = async () => {
-        console.log()
-        return await axios.get("https://ac6a-103-170-153-30.in.ngrok.io/")
-            .then((response) => console.log(response));
-    }
-    const fetchData = async () => {
-        return await fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
-            .then((data) => console.log(data));
-    }
-    console.log(fetchData)
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-            .then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                console.log(data);
-            });
-        fetchData();
+
+
     }, [])
 
-    const AddAccountinner = async () => {
-        console.log("hi")
-        await fetch({
-            method: 'get',
-            url: 'https://ac6a-103-170-153-30.in.ngrok.io/',
+    const Check = () => {
+        fetch('https://43e2-103-170-153-72.in.ngrok.io/wallet', {
+            method: 'POST',
             headers: {
-                // "Content-Type": "application/json",
-                "Accept": "application/json,text/plain, */*"
+                'Content-type': 'application/json; charset=UTF-8',
+                "Accept": "application/json"
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                // Handle data
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }
+
+    const Check1 = () => {
+        fetch('https://3237-103-170-153-72.in.ngrok.io/', {
+            method: 'get',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                "Accept": "application/json",
+                "access-control-allow-headers": "Content-Type",
+                "access-control-allow-origin": "*",
+                "content-type": "application/json"
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                // Handle data
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }
+
+
+    const AddAccountinner = async () => {
+        await axios({
+            method: 'get',
+            url: 'https://3237-103-170-153-72.in.ngrok.io/transaction',
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                "Accept": "application/json"
             }
 
         }).then(function (response) {
-            console.log(response)
-            console.log("response123", response.data)
-            const data = response.data;
-            // setchatBuckUsers(data)
-        })
+            console.log("hi")
+            console.log("response", JSON.stringify(response))
+            // ReceiveMsg();
+        }).catch((e) => {
+            console.log(e);
+        });
     }
+
     const getToddies = async () => {
         console.log("do")
         try {
-            await axios.post('https://ac6a-103-170-153-30.in.ngrok.io/')
+            await axios.get('https://3237-103-170-153-72.in.ngrok.io/',
+                {
+                    headers: {
+                        "Access-Control-Allow-Methods": "get",
+                        'x-rapidapi-host': 'https://ac6a-103-170-153-30.in.ngrok.io/',
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Headers": "*"
+                    }
+                })
                 .then((response) => {
                     console.log("hi")
                     console.log(response)
@@ -104,6 +116,11 @@ function HomeScreen() {
                 </div>
             </div>
             <button onClick={AddAccountinner}>VCclicdsibc</button>
+            <button onClick={getToddies}>axios</button>
+            <button onClick={Check}>wallet</button>
+            <button onClick={Check1}>blockchain</button>
+
+
         </div>
     )
 }
